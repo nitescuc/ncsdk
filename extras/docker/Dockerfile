@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get update && apt-get install -y \
     gcc-4.9 \
     libstdc++6 \
+    python3-pip \
+    nano \
     && apt-get clean
 
 RUN cd /tmp && wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.9.0/tensorflow-1.9.0-cp35-none-linux_armv7l.whl \
@@ -27,3 +29,5 @@ WORKDIR "/ncsdk"
 
 # Run the installer
 RUN make install
+
+RUN pip3 uninstall -y h5py && pip3 install -y numpy --upgrade
