@@ -22,7 +22,7 @@ RUN cd /tmp && wget https://github.com/lhelontra/tensorflow-on-arm/releases/down
     && pip3 install tensorflow-1.9.0-cp35-none-linux_armv7l.whl
 
 # Copy over the NCSDK
-COPY ./ ncsdk/
+COPY ./ /ncsdk/
 
 # Set the current working directory to the cloned ncsdk directory
 WORKDIR "/ncsdk"
